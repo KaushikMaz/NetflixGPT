@@ -1,15 +1,15 @@
 import React from 'react'
 import Header from './Header'
-import { validateInputdata } from './utils.js/Validate'
+import { validateInputData } from './utils.js/Validate'
 
 const LoginPage = () => {
   const[isSignIn,setIsSignIn]=React.useState(true)
   const [errorMessage, setErrorMessage]=React.useState(null) 
   const email=React.useRef(null)
   const password=React.useRef(null)
-
+  
   const handleButtonClick=()=>{
-    const error=validateInputdata(email.current.value,password.current.value)
+    const error=validateInputData(email.current.value,password.current.value)
     setErrorMessage(error)
     console.log(errorMessage)
   }

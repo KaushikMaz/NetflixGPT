@@ -1,5 +1,5 @@
 
-export const validateInputdata=(email,password)=>{
+export const validateInputData=(email,password)=>{
     const isEmailValid=  /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/.test(email)
     const isPasswordValid= /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password)
 
