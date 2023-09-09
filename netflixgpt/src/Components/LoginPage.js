@@ -23,12 +23,13 @@ const LoginPage = () => {
         .then((userCredential) => {
     // Signed in 
         const user = userCredential.user;
-    // ...
+        console.log(user)
+    
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    // ..
+    setErrorMessage(errorCode+ "-"+ errorMessage)
   });
 
      }else{
@@ -37,11 +38,13 @@ const LoginPage = () => {
         .then((userCredential) => {
         // Signed in 
           const user = userCredential.user;
-        // ...
+          console.log(user)
+        
       })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
+          setErrorMessage(errorCode+ "-"+ errorMessage)
       });
 
      }
@@ -59,7 +62,7 @@ const LoginPage = () => {
         <input className="w-full p-3 my-2 rounded-sm bg-gray-600" ref={email} type="email" placeholder='Enter your Email'/>
         <input className="w-full p-3 my-2 rounded-sm bg-gray-600" ref={password} type="password" placeholder="Enter your password"/>
         <p className="text-red-700 m-2 font-semibold">{errorMessage}</p>
-        <button onClick={handleButtonClick} className="w-full p-3 my-8 text-white rounded-sm  bg-red-700">Sign In</button>
+        <button onClick={handleButtonClick} className="w-full p-3 my-8 text-white rounded-sm  bg-red-700">{isSignIn?"Sign In" :"Sign Up"}ne</button>
         <p className="text-gray-400 font-semibold my-3">{isSignIn?"New to Netflix?":"Already a user?"} <span onClick={()=>setIsSignIn(prev=>!prev)} className="text-white font-semibold cursor-pointer">{isSignIn?"Sign Up":"Sign In"}</span></p>
       </form>
     </div>
