@@ -2,6 +2,7 @@ import React from 'react'
 import {createBrowserRouter,RouterProvider} from "react-router-dom"
 import LoginPage from './LoginPage'
 import BrowsePage from './BrowsePage'
+
 const Body = () => {
     const appRouter=createBrowserRouter([
         {   path:"/",
