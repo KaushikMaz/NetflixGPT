@@ -3,8 +3,10 @@ import Header from './Header'
 import { validateInputData } from './utils.js/Validate'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import {auth} from "./utils.js/Firebase"
+import { useNavigate } from 'react-router-dom'
 
 const LoginPage = () => {
+  const navigate=useNavigate()
   const[isSignIn,setIsSignIn]=React.useState(true)
   const [errorMessage, setErrorMessage]=React.useState(null) 
   const email=React.useRef(null)
@@ -24,6 +26,7 @@ const LoginPage = () => {
     // Signed in 
         const user = userCredential.user;
         console.log(user)
+        navigate("/browse")
     
   })
   .catch((error) => {
@@ -39,6 +42,7 @@ const LoginPage = () => {
         // Signed in 
           const user = userCredential.user;
           console.log(user)
+          navigate("/browse")
         
       })
         .catch((error) => {
@@ -62,7 +66,7 @@ const LoginPage = () => {
         <input className="w-full p-3 my-2 rounded-sm bg-gray-600" ref={email} type="email" placeholder='Enter your Email'/>
         <input className="w-full p-3 my-2 rounded-sm bg-gray-600" ref={password} type="password" placeholder="Enter your password"/>
         <p className="text-red-700 m-2 font-semibold">{errorMessage}</p>
-        <button onClick={handleButtonClick} className="w-full p-3 my-8 text-white rounded-sm  bg-red-700">{isSignIn?"Sign In" :"Sign Up"}ne</button>
+        <button onClick={handleButtonClick} className="w-full p-3 my-8 text-white rounded-sm  bg-red-700">{isSignIn?"Sign In" :"Sign Up"}</button>
         <p className="text-gray-400 font-semibold my-3">{isSignIn?"New to Netflix?":"Already a user?"} <span onClick={()=>setIsSignIn(prev=>!prev)} className="text-white font-semibold cursor-pointer">{isSignIn?"Sign Up":"Sign In"}</span></p>
       </form>
     </div>
