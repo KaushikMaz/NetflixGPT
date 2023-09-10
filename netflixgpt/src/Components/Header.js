@@ -1,9 +1,27 @@
 import React from 'react'
+import {signOut} from "firebase/auth";
+import {auth} from "./utils.js/Firebase"
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Header = () => {
+  const navigate=useNavigate()
   const[showUserMenu,setShowUserMenu]=React.useState(false)
   const handleUserMenu=()=>{
     setShowUserMenu(prev=>!prev)
+  }
+  const handleSignOut=()=>{
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      navigate("/")
+
+    }).catch((error) => {
+      // An error happened.
+      navigate("/error")
+    });
+    
+
   }
   return (
     <>
@@ -22,7 +40,7 @@ const Header = () => {
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className=" relative left-20 w-6 h-6">
       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
       </svg>
-      <p className="pl-5 p-2 bg-black text-white font-bold ">Sign Out</p>
+      <p onClick={()=>handleSignOut()} className="cursor-pointer pl-5 p-2 bg-black text-white font-bold ">Sign Out</p>
     </div>}
     </>
   )
