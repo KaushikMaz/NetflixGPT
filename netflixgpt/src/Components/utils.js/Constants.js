@@ -6,3 +6,7 @@ export const API_options= {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYmYzMDE0OGNiNjhhZWIxNTVjYzZmYTlhMGQwZjcwNiIsInN1YiI6IjY0ZmRkOTlmZmZjOWRlMGVlM2M0YTdiZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.MFETzX9NNcbvmkgtE86cVWl6XScGRhMQwJgh5cHpvlA'
     }
   };
+
+ export const randomValue=(array)=>{
+    return Math.floor(Math.random()*array.length)
+ }
