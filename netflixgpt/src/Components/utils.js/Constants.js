@@ -10,3 +10,5 @@ export const API_options= {
  export const randomValue=(array)=>{
     return Math.floor(Math.random()*array.length)
  }
+
+ export const imagePoster="https://image.tmdb.org/t/p/w500/"
