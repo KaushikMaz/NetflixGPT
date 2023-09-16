@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './Header'
+import { Background_Image } from './utils.js/Constants'
 import { validateInputData } from './utils.js/Validate'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import {auth} from "./utils.js/Firebase"
@@ -69,10 +70,9 @@ const LoginPage = () => {
   }
   return (
     
-    <div >
+    <div className="bg-cover bg-no-repeat bg-center h-screen bg-gradient-to-b from-black" style={{ backgroundImage:`url(${Background_Image}`}}>
       <Header/>
-      <img  className="relative" src="https://assets.nflxext.com/ffe/siteui/vlv3/855ed6e2-d9f1-4afd-90da-96023ec747c3/85eb5b91-25ed-4965-ace9-ba8e4a0ead8d/IN-en-20230828-popsignuptwoweeks-perspective_alpha_website_medium.jpg" alt="Netflix background"/>
-      <form onSubmit={(e)=>e.preventDefault()} className="absolute z-40 w-[35%] p-16 top-32 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-80">
+      <form onSubmit={(e)=>e.preventDefault()} className="absolute z-40 w-[35%] p-16 top-28 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-80">
         <p className="text-3xl text-white font-bold py-5">{isSignIn?"Sign In":"Sign Up"}</p>
         {!isSignIn &&
         <input className="w-full p-3 my-2 rounded-sm bg-gray-600" ref={name} type="text" placeholder='Enter your Full Name'/>}
