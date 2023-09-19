@@ -20,7 +20,7 @@ const Backgroundvideo = ({movieId}) => {
        const filterDataIndex=randomValue(filterData)
        const jsonIndex=randomValue(json.results)
        const trailer=filterData.length? filterData[filterDataIndex]:json.results[jsonIndex]
-       console.log(trailer)
+      //  console.log(trailer)
        dispatch(addTrailerVideo(trailer))
 
       }

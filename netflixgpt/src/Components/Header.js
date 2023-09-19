@@ -6,6 +6,8 @@ import {useSelector,useDispatch} from "react-redux"
 import {addUser,removeUser} from './utils.js/userSlice'
 import { toggleGptSearch } from './utils.js/gptSlice';
 import { Netflix_Logo } from './utils.js/Constants';
+import { supportedLanguages } from './utils.js/Constants';
+import { changeLanguage } from './utils.js/configSlice';
 
 
 
@@ -54,15 +56,25 @@ const Header = () => {
 
 
 // console.log(user)
+const handleLanguageChange=(e)=>{
+  dispatch(changeLanguage(e.target.value))
+}
   
   return (
     <>
     <div className=" flex justify-between fixed  w-full z-40 ">
         <img  className=" h-24 w-46  ml-2"src={Netflix_Logo} alt="Netflix Logo"/>
-        {user && <div className="m-3">
-          <div className="flex">
-            <button onClick={()=>handleGptSearchView()} className="text-white hover:bg-red-800 text-xl rounded-lg bg-red-600 font-semibold p-2 mr-16">{gptSearchView?"HOME":"GPT Search"}</button>
-            <svg onClick={()=>handleUserMenu()} alt="userIcon" xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=" cursor-pointer w-10 h-10">
+        {user && <div className="m-3 w-96">
+          <div className="flex justify-end items-center">
+           {gptSearchView && <div className='mr-10'>
+            <select onChange={(e)=>handleLanguageChange(e)} className="m-2 hover:bg-red-800 p-2 rounded-lg bg-red-600 cursor-pointer text-white w-30">
+              {supportedLanguages.map(lang=><option className=" w-20 m-2  p-3 bg-black text-white cursor-pointer" value={lang.identifier} key={lang.identifier}>{lang.name}</option>)}
+            </select>
+            </div>}
+            <div className="mr-10">
+            <button onClick={()=>handleGptSearchView()} className="text-white hover:bg-red-800 text-xl rounded-lg bg-red-600 font-semibold p-2 ">{gptSearchView?"HOME":"GPT Search"}</button>
+            </div>
+            <svg onClick={()=>handleUserMenu()} alt="userIcon" xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="  hover:bg-red-800 hover:rounded-2xl cursor-pointer w-10 h-10">
             <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
             {/* <img  onClick={()=>handleUserMenu()} className="cursor-pointer w-10 h-10" src={user.photoUrl} alt="userIcon"/> */}
