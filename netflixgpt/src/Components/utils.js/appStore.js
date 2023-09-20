@@ -8,7 +8,7 @@ const appStore= configureStore({
         user:userSlice,
         movies:movieSlice,
         gpt:gptSlice,
-        language:configSlice
+        config:configSlice
     }
 })
 
