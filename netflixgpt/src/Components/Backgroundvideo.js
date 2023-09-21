@@ -8,7 +8,7 @@ const Backgroundvideo = ({movieId}) => {
   const trailerVideo= useSelector(store=>store.movies?.trailerVideo)
   
     React.useEffect(()=>{
-        getVideoWithId()
+      !trailerVideo && getVideoWithId()
     
     },[])
     
