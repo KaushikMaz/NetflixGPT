@@ -6,7 +6,7 @@ import { Background_Image } from './utils.js/Constants'
 
 const SearchPageGPT = () => {
   return (
-    <div className="bg-cover  bg-center bg-no-repeat h-screen" style={{ backgroundImage:`url(${Background_Image}`}}>
+    <div className="bg-cover w-screen fixed bg-center bg-no-repeat h-screen" style={{ backgroundImage:`url(${Background_Image}`}}>
         <SearchBarGPT/>
         <GptSearchResults/>
     </div>

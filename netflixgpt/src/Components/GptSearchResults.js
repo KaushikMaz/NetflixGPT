@@ -9,8 +9,10 @@ const GptSearchResults = () => {
   
  
   return (
-    <div className =" relative top-[55%] w-screen bg-black bg-opacity-90">
+    <div className="relative top-44 bg-black opacity-90">
+    <div className =" relative top-36 p-2 ml-0 m-2 w-screen">
       <MoviesList title={"Search Results"} movies={movieResultsArray} />
+    </div>
     </div>
   )
 }
