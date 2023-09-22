@@ -10,6 +10,8 @@ const SearchBarGPT = () => {
   const dispatch=useDispatch()
 
   const handleGPTSearch=async()=>{
+    const inputValue=searchText.current.value.trim()
+    if(!inputValue) return;
         
    const gptQuery="Act as a movie recommendation system and suggest movie for the query:"+ searchText.current.value 
    +",only give me name of 5 movies, comma separated like the example result given ahead. Example: Gadar, Dil, Sholay, Don, Koi Mil Gaya"

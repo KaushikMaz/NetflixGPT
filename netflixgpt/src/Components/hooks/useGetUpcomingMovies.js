@@ -5,7 +5,7 @@ import { API_options } from "../utils.js/Constants"
 
 
 const useGetUpcomingMovies=()=>{
-const upcomingMovies=useSelector(store=>store.movies.upcomingMovies)
+const upcomingMovies=useSelector(store=>store.movies?.upcomingMovies)
 const dispatch=useDispatch()
   const getUpcoming=async()=>{
     const data= await fetch("https://api.themoviedb.org/3/movie/upcoming?page=1",API_options)

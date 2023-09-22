@@ -5,7 +5,7 @@ import { API_options } from "../utils.js/Constants"
 
 
 const useGetTopRated=()=>{
-const topRatedMovies=useSelector(store=>store.movies.topRatedMovies)
+const topRatedMovies=useSelector(store=>store.movies?.topRatedMovies)
 const dispatch=useDispatch()
   const getTopRated=async()=>{
     const data= await fetch("https://api.themoviedb.org/3/movie/top_rated?page=1",API_options)
