@@ -6,7 +6,7 @@ const SecondaryComponent = () => {
   
   if(!movies) return;
   return (
-    <div className="bg-black bg-opacity-95 ">
+    <div className="bg-black bg-opacity-95  ">
       <MoviesList title={"Now Playing"} movies={movies?.nowPlayingMovies}/>
       <MoviesList title={"Popular Movies"} movies={movies?.popularMovies}/>
       <MoviesList title={"Top rated Movies"} movies={movies?.topRatedMovies}/>

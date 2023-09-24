@@ -43,10 +43,10 @@ const SearchBarGPT = () => {
 }
   
   return (
-    <div className=" relative top-32 flex justify-center items-center">
-      <form className=" bg-black rounded-lg grid grid-cols-12 w-[70%] " onSubmit={(e)=>e.preventDefault()}>
-        <input ref={searchText} className="p-2 m-3 col-span-10 rounded-lg" type="text" placeholder={gptInputLanguage[langKey].gptPlaceholder}/>
-        <button onClick={()=>handleGPTSearch()} className="col-span-2 flex cursor-pointer justify-center hover:bg-red-800 bg-red-600 text-xl text-white rounded-lg py-2 px-4 m-3 font-semibold">{gptInputLanguage[langKey].gptSearchButton}</button> 
+    <div className=" relative top-28 h-20 md:top-32 flex justify-center items-center">
+      <form className=" bg-black rounded-lg grid grid-cols-12 w-[95%] md:w-[70%] " onSubmit={(e)=>e.preventDefault()}>
+        <input ref={searchText} className="px-1 mx-2 m-3 text-xs md:text-lg md:p-2 md:m-3 col-span-9 md:col-span-10 rounded-lg" type="text" placeholder={gptInputLanguage[langKey].gptPlaceholder}/>
+        <button onClick={()=>handleGPTSearch()} className="col-span-3 flex cursor-pointer md:col-span-2 justify-center hover:bg-red-800 bg-red-600 text-xs md:text-xl text-white rounded-lg p-2 md:py-2 px-2 md:px-1 m-3 ml-0 md:m-3 font-semibold">{gptInputLanguage[langKey].gptSearchButton}</button> 
 
       </form>
 

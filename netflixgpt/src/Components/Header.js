@@ -64,11 +64,11 @@ const handleLanguageChange=(e)=>{
     <>
     <div className="fixed flex justify-between md:fixed  w-full z-40 ">
         <img  className=" md:h-24 md:w-46 h-12 w-23 ml-2"src={Netflix_Logo} alt="Netflix Logo"/>
-        {user && <div className="m-3 w-96">
+        {user && <div className="m-2 md:m-3 w-48 md:w-96">
           <div className="flex justify-end items-center">
-           {gptSearchView && <div className='mr-10'>
-            <select onChange={(e)=>handleLanguageChange(e)} className="m-2 hover:bg-red-800 p-2 rounded-lg bg-red-600 cursor-pointer text-white w-30">
-              {supportedLanguages.map(lang=><option className=" w-20 m-2  p-3 bg-black text-white cursor-pointer" value={lang.identifier} key={lang.identifier}>{lang.name}</option>)}
+           {gptSearchView && <div className='mr-5 md:mr-10'>
+            <select onChange={(e)=>handleLanguageChange(e)} className="md:m-2 hover:bg-red-800 md:p-2 p-1 rounded-lg bg-red-600 cursor-pointer text-sm md:text-lg text-white w-18 md:w-30">
+              {supportedLanguages.map(lang=><option className=" bg-black text-white cursor-pointer" value={lang.identifier} key={lang.identifier}>{lang.name}</option>)}
             </select>
             </div>}
             <div className="mr-2 md:mr-10">
