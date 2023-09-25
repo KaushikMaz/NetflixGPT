@@ -4,7 +4,7 @@ const VideoDetail = ({title,details}) => {
   return (
     <div className="w-screen aspect-video absolute bg-gradient-to-r from-black pt-12 pl-2 md:pt-52 md:pl-20 ">
       <h1 className="text-sm md:text-4xl mx-5 mb-3 md:m-5 text-white font-bold">{title}</h1>
-      <p className=" mx-5 md:m-5 text-xs md:text-lg text-white w-[80%] md:w-[40%]">{details}</p>
+      <p className=" mx-5 md:m-5 text-xs md:text-lg text-white h-26 w-[90%] md:w-[40%]">{details}</p>
       <div className='flex ml-3  md:m-3'>
         <button className=" m-2 md:m-2 hover:bg-slate-400 bg-opacity-70 bg-white w-[20%] md:w-[10%] flex justify-center items-center rounded-lg md:p-3">
           <svg xmlns="http://www.w3.org/2000/svg" fill="Black" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3 h-3 md:w-6 md:h-6">
