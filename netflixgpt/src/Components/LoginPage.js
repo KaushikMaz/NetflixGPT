@@ -70,17 +70,17 @@ const LoginPage = () => {
   }
   return (
     
-    <div className="bg-cover bg-no-repeat bg-center h-screen bg-gradient-to-b from-black" style={{ backgroundImage:`url(${Background_Image}`}}>
+    <div className="bg-cover bg-no-repeat bg-center h-screen " style={{ backgroundImage:`url(${Background_Image}`}}>
       <Header/>
-      <form onSubmit={(e)=>e.preventDefault()} className="absolute z-40 w-[35%] p-16 top-28 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-80">
-        <p className="text-3xl text-white font-bold py-5">{isSignIn?"Sign In":"Sign Up"}</p>
+      <form onSubmit={(e)=>e.preventDefault()} className="absolute z-40 w-[75%] md:w-[35%]  p-10 py-5 md:p-16 top-32 md:top-28 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-80">
+        <p className="text-lg md:text-3xl text-white font-bold py-5">{isSignIn?"Sign In":"Sign Up"}</p>
         {!isSignIn &&
-        <input className="w-full p-3 my-2 rounded-sm bg-gray-600" ref={name} type="text" placeholder='Enter your Full Name'/>}
-        <input className="w-full p-3 my-2 rounded-sm bg-gray-600" ref={email} type="email" placeholder='Enter your Email'/>
-        <input className="w-full p-3 my-2 rounded-sm bg-gray-600" ref={password} type="password" placeholder="Enter your password"/>
-        <p className="text-red-700 m-2 font-semibold">{errorMessage}</p>
-        <button onClick={handleButtonClick} className="w-full p-3 my-8 text-white rounded-sm  bg-red-700">{isSignIn?"Sign In" :"Sign Up"}</button>
-        <p className="text-gray-400 font-semibold my-3">{isSignIn?"New to Netflix?":"Already a user?"} <span onClick={()=>setIsSignIn(prev=>!prev)} className="text-white font-semibold cursor-pointer">{isSignIn?"Sign Up":"Sign In"}</span></p>
+        <input className="w-full p-1 md:p-3 text-sm md:text-lg my-2 rounded-sm bg-gray-600" ref={name} type="text" placeholder='Enter your Full Name'/>}
+        <input className="w-full p-1 md:p-3 text-sm md:text-lg my-2 rounded-sm bg-gray-600" ref={email} type="email" placeholder='Enter your Email'/>
+        <input className="w-full p-1 md:p-3 text-sm md:text-lg my-2 rounded-sm bg-gray-600" ref={password} type="password" placeholder="Enter your password"/>
+        <p className="text-red-700 m-2 font-semibold text-sm md:text-lg">{errorMessage}</p>
+        <button onClick={handleButtonClick} className="w-full p-1 md:p-3 my-2 text-sm md:text-lg md:my-8 text-white rounded-sm  bg-red-700">{isSignIn?"Sign In" :"Sign Up"}</button>
+        <p className="text-gray-400 text-sm md:text-lg font-semibold my-1 md:my-3">{isSignIn?"New to Netflix?":"Already a user?"} <span onClick={()=>setIsSignIn(prev=>!prev)} className="text-white font-semibold cursor-pointer">{isSignIn?"Sign Up":"Sign In"}</span></p>
       </form>
     </div>
     
