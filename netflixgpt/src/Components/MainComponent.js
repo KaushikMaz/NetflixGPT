@@ -15,7 +15,7 @@ const MainComponent = () => {
   
   
   return (
-    <div className="relative w-screen">
+    <div className="relative">
         <VideoDetail title={original_title} details={overview}/>
         <Backgroundvideo movieId={id}/>
         

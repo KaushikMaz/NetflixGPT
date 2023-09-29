@@ -25,12 +25,16 @@ const Backgroundvideo = ({movieId}) => {
 
       }
 return (
-    
+  (!trailerVideo)?
+  (<div className="aspect-video">
+    <div className="h-full w-screen bg-gray-500 animate-pulse"></div>
+  </div>
+  ):(
     <div className="aspect-video">
         <iframe className="w-screen h-full" src={`https://www.youtube.com/embed/${trailerVideo?.key}?si=RtpflzTDm_KiFirI?&autoplay=1&mute=1`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
 
     </div>
-  )
+  ))
 }
 
 export default Backgroundvideo
