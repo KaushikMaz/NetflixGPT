@@ -1,8 +1,8 @@
 import React from 'react'
-import { API_options, gptInputLanguage } from './utils.js/Constants'
+import { API_options, gptInputLanguage } from './utils_js/Constants'
 import { useSelector,useDispatch } from 'react-redux'
-import { openai } from './utils.js/openai'
-import { addGptMovies } from './utils.js/gptSlice'
+import { openai } from './utils_js/openai'
+import { addGptMovies } from './utils_js/gptSlice'
 
 const SearchBarGPT = () => {
   const langKey=useSelector(store=>store.config.langKey)

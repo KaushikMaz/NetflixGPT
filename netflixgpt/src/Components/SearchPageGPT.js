@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchBarGPT from "./SearchBarGPT"
 import GptSearchResults from './GptSearchResults'
-import { Background_Image } from './utils.js/Constants'
+import { Background_Image } from './utils_js/Constants'
 
 
 const SearchPageGPT = () => {

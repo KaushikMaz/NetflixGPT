@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from './Header'
-import { Background_Image } from './utils.js/Constants'
-import { validateInputData } from './utils.js/Validate'
+import { Background_Image } from './utils_js/Constants'
+import { validateInputData } from './utils_js/Validate'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
-import {auth} from "./utils.js/Firebase"
+import {auth} from "./utils_js/Firebase"
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { addUser } from './utils.js/userSlice'
+import { addUser } from './utils_js/userSlice'
 
 const LoginPage = () => {
   const dispatch=useDispatch()

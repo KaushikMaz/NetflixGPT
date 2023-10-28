@@ -1,7 +1,7 @@
 import React from "react"
 import { useDispatch,useSelector } from "react-redux"
-import { addTopRatedMovies } from "../utils.js/movieSlice"
-import { API_options } from "../utils.js/Constants"
+import { addTopRatedMovies } from "../utils_js/movieSlice"
+import { API_options } from "../utils_js/Constants"
 
 
 const useGetTopRated=()=>{

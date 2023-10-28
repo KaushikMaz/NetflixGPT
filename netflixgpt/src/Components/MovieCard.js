@@ -1,5 +1,5 @@
 import React from 'react'
-import { imagePoster } from './utils.js/Constants'
+import { imagePoster } from './utils_js/Constants'
 
 const MovieCard = ({image,rating}) => {
   if(!rating) return null;

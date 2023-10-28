@@ -1,7 +1,7 @@
 import React from 'react'
-import { API_options,randomValue } from './utils.js/Constants'
+import { API_options,randomValue } from './utils_js/Constants'
 import {useDispatch, useSelector} from "react-redux"
-import { addTrailerVideo } from './utils.js/movieSlice'
+import { addTrailerVideo } from './utils_js/movieSlice'
 
 const Backgroundvideo = ({movieId}) => {
   const dispatch=useDispatch()
