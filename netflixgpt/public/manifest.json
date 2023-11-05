@@ -1,6 +1,6 @@
 {
-  "short_name": "MoiveHub",
-  "name": "MoiveHub:Your ultimate destination for movies",
+  "short_name": "MovieHub",
+  "name": "MovieHub:Your ultimate destination for movies",
   
   "start_url": ".",
   "display": "standalone",
