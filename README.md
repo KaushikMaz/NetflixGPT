@@ -14,8 +14,11 @@ For movie buffs and cinephiles, MovieHub is the best place to go. With a style t
 
 ## Technical Features
 **Frameworks:** ReactJS, Tailwind CSS
+
 **Routing:** React Router 6
+
 **State Management:** Redux Toolkit
+
 **API's Integrated:** Tmdb API, OpenAI API
 
 
