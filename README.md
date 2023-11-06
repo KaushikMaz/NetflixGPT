@@ -21,6 +21,8 @@ For movie buffs and cinephiles, MovieHub is the best place to go. With a style t
 
 **API's Integrated:** Tmdb API, OpenAI API
 
+**Authentication:** Firebase
+
 
 
 ## Getting Started
