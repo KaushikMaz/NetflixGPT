@@ -12,6 +12,14 @@ For movie buffs and cinephiles, MovieHub is the best place to go. With a style t
 
 🔐 **Authentication Security:** Our first priorities are your security and privacy. For a quick and safe login process, we have integrated Firebase. You can be sure that your account and private data are secure.
 
+## Technical Features
+**Frameworks:** ReactJS, Tailwind CSS
+**Routing:** React Router 6
+**State Management:** Redux Toolkit
+**API's Integrated:** Tmdb API, OpenAI API
+
+
+
 ## Getting Started
 
 MovieHub is your one-stop shop for everything related to movies, whether you are searching for the newest blockbusters, timeless classics, or undiscovered treasures. Discover, look up, and watch movies in a whole new way.
