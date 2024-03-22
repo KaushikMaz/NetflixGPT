@@ -1,7 +1,7 @@
 import React from 'react'
 import { API_options, gptInputLanguage } from './utils_js/Constants'
 import { useSelector,useDispatch } from 'react-redux'
-import { openai } from './utils_js/openai'
+import { genAI } from './utils_js/openai'
 import { addGptMovies } from './utils_js/gptSlice'
 
 const SearchBarGPT = () => {
@@ -13,31 +13,43 @@ const SearchBarGPT = () => {
     const inputValue=searchText.current.value.trim()
     if(!inputValue) return;
         
-   const gptQuery="Act as a movie recommendation system and suggest movie for the query:"+ searchText.current.value 
-   +",only give me name of 5 movies, comma separated like the example result given ahead. Example: Gadar, Dil, Sholay, Don, Koi Mil Gaya"
+  //  const gptQuery="Act as a movie recommendation system and suggest movie for the query:"+ searchText.current.value 
+  //  +",only give me name of 5 movies, comma separated like the example result given ahead. Example: Gadar, Dil, Sholay, Don, Koi Mil Gaya"
    
-    const gptResults = await openai.chat.completions.create({
-      messages: [{ role: 'user', content: gptQuery }],
-      model: 'gpt-3.5-turbo',
-    });
+   const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+   const prompt="Act as a movie recommendation system and suggest movie for the query:"+ searchText.current.value 
+   +",only give me name of 5 movies, comma separated like the example result given ahead. Example: Gadar, Dil, Sholay, Don, Koi Mil Gaya"
+   const result = await model.generateContent(prompt);
+  const response = await result.response;
+  const text = response.text();
+  console.log(text);
+
+
+
+    // const gptResults = await openai.chat.completions.create({
+    //   messages: [{ role: 'user', content: gptQuery }],
+    //   model: 'gpt-3.5-turbo',
+    // });
     // console.log(gptResults.choices)
     
 
-   const gptSearchMovieResults=gptResults.choices?.[0]?.message?.content.split(",")
-    // console.log(gptSearchMovieResults)
-    if(!gptSearchMovieResults) return null ;
-  
+//    const gptSearchMovieResults=gptResults.choices?.[0]?.message?.content.split(",")
+//     // console.log(gptSearchMovieResults)
+//     if(!gptSearchMovieResults) return null ;
+  const geminiProSearchResults=text.split(",")
+  if(!geminiProSearchResults) return null ;
+
   const searchTMDBMovies=async(movies)=>{
     const data= await fetch(`https://api.themoviedb.org/3/search/movie?query=${movies}&include_adult=false&page=1`, API_options)
     const json=await data.json()
     return json.results
 }
 
-  const gptMoviePromiseArray=gptSearchMovieResults.map((movie)=>searchTMDBMovies(movie))
-  const tmdbMovieResults=await Promise.all(gptMoviePromiseArray)  
+  const geminiProMoviePromiseArray=geminiProSearchResults.map((movie)=>searchTMDBMovies(movie))
+  const tmdbMovieResults=await Promise.all(geminiProMoviePromiseArray)  
   // console.log(tmdbMovieResults)   
 
-  dispatch(addGptMovies({movieNames:gptSearchMovieResults,movieResults:tmdbMovieResults}))
+  dispatch(addGptMovies({movieNames:geminiProSearchResults,movieResults:tmdbMovieResults}))
   
 
 }
