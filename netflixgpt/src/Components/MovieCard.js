@@ -2,7 +2,7 @@ import React from 'react'
 import { imagePoster } from './utils_js/Constants'
 
 const MovieCard = ({image,rating}) => {
-  if(!rating) return null;
+  if(!rating || !image) return null;
   return (
     <div className="w-24 p-1 relative md:w-48 md:p-1 md:px-2 ">
       <img  src={imagePoster+image} alt="moviePoster"/>
